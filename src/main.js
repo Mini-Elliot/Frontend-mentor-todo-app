@@ -28,7 +28,7 @@ let tasks = [];
 function changeImage() {
   const theme = loadTheme();
   const device = window.innerWidth >= 376 ? 'desktop' : 'mobile';
-  headerImage.src = `./src/assets/images/bg-${device}-${theme}.jpg`;
+  headerImage.src = `/src/assets/images/bg-${device}-${theme}.jpg`;
 }
 
 window.addEventListener('resize', changeImage);
@@ -46,7 +46,7 @@ function toggleTheme() {
   const toggleIconImage = toggleIcon.classList.contains('theme-dark')
     ? 'sun'
     : 'moon';
-  toggleIcon.src = `./src/assets/images/icon-${toggleIconImage}.svg`;
+  toggleIcon.src = `/src/assets/images/icon-${toggleIconImage}.svg`;
 
   const theme = toggleIcon.classList.contains('theme-dark') ? 'dark' : 'light';
   root.setAttribute('data-theme', theme);
@@ -61,7 +61,7 @@ btnToggle.addEventListener('click', toggleTheme);
 function loadTheme() {
   const theme = JSON.parse(localStorage.getItem('theme')) || 'dark';
   const icon = JSON.parse(localStorage.getItem('icon')) || 'sun';
-  toggleIcon.src = `./src/assets/images/icon-${icon}.svg`;
+  toggleIcon.src = `/src/assets/images/icon-${icon}.svg`;
   theme === 'dark'
     ? toggleIcon.classList.add('theme-dark')
     : toggleIcon.classList.remove('theme-dark');
@@ -92,7 +92,7 @@ function renderTasks(filter = 'all') {
         <button type="button" class="btn btn--complete-task">✔</button>
         <p class="task-description">${task.task}</p>
         <button type="button" class="btn btn--delete-task">
-          <img src="./src/assets/images/icon-cross.svg"/>
+          <img src="/src/assets/images/icon-cross.svg"/>
         </button>
     </li>`;
     taskList.insertAdjacentHTML('afterbegin', taskHTML);
