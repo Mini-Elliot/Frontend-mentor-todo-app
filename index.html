@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/favicon-32x32.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Todo app</title>
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="/src/assets/images/bg-desktop-dark.jpg"
+        alt="header image"
+        class="header__image"
+      />
+    </header>
+
+    <main class="main">
+      <header class="main__header">
+        <h1 class="main__heading">TODO</h1>
+        <button type="button" class="btn btn--toggle">
+          <img
+            src="./src/assets/images/icon-sun.svg"
+            alt="toggle-icon"
+            class="toggle-icon theme-dark"
+          />
+        </button>
+      </header>
+
+      <div class="task-input-container">
+        <button type="button" class="btn btn--complete-task">✔</button>
+        <input
+          type="text"
+          class="task-input__input-field"
+          id="taskInput"
+          placeholder="Create a new todo..."
+        />
+        <button type="button" class="btn btn--add-task" id="addTaskBtn">
+          &LeftArrow;
+        </button>
+      </div>
+
+      <div class="task-list-container">
+        <ul class="task-list" id="taskList" role="list">
+          <div class="task">Add a task</div>
+        </ul>
+        <div class="task-list__footer">
+          <div class="task-list__total-count"></div>
+          <div class="filters">
+            <button type="button" class="btn btn--all filter-active">
+              All
+            </button>
+            <button type="button" class="btn btn--active">Active</button>
+            <button type="button" class="btn btn--completed">Completed</button>
+          </div>
+          <button type="button" class="btn btn--clear-complete">
+            Clear Complete
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer class="note">Drag and drop to reorder list</footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
